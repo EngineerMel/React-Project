@@ -7,9 +7,13 @@ class Movies extends Component {
     movies: getMovies()
   };
 
+  //HANDLING
   handleDelete = movie => {
     const movies = this.state.movies.filter(m => m._id !== movie._id);
     this.setState({ movies });
+  };
+  handleLike = () => {
+    console.log("Like Clicked");
   };
 
   render() {
@@ -39,7 +43,7 @@ class Movies extends Component {
                 <td>{movie.numberInStock}</td>
                 <td>{movie.dailyRentalRate}</td>
                 <td>
-                  <Like />
+                  <Like liked={movie.liked} onClick={this.handleLike} />
                 </td>
                 <td>
                   <button
