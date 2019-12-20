@@ -22,6 +22,7 @@ class MoviesTable extends Component {
           sortColumn={sortColumn}
           onSort={onSort}
         />
+        <TableBody data={movies} />
         <tbody>
           {movies.map(movie => (
             //   I targeted movie._id because it uniquely identfies each movie object in the API

@@ -2,11 +2,17 @@ import React, { Component } from "react";
 
 class TableBody extends Component {
   render() {
+    const { data, columns } = this.props;
+
     return (
       <tbody>
-        <tr>
-          <td></td>
-        </tr>
+        {data.map(item => (
+          <tr>
+            {columns.map(column => (
+              <td> </td>
+            ))}
+          </tr>
+        ))}
       </tbody>
     );
   }
