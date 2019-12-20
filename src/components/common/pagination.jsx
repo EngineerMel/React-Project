@@ -1,12 +1,19 @@
 import React from "react";
+import _ from "lodash"; //this is a javascript library
 import PropTypes from "prop-types";
-import _ from "lodash";
+
+//whenever you build a reusable component before implementing think about the interface of the component
+//what are the inputs the component is going to receive?
+//what events is it going to raise ?
 
 const Pagination = props => {
+  // [1,2,3].map
   const { itemsCount, pageSize, currentPage, onPageChange } = props;
+  console.log(currentPage);
 
   const pagesCount = Math.ceil(itemsCount / pageSize);
   if (pagesCount === 1) return null;
+  //below I used generate an array of numbers using lodash
   const pages = _.range(1, pagesCount + 1);
 
   return (
